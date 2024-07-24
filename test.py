@@ -231,7 +231,7 @@ def test(data,
         # print("mAP75", ap[:, 5].mean(-1))
         ap50, ap75, ap = ap[:, 0], ap[:, 5], ap.mean(1)  # AP@0.5, AP@0.5:0.95
         mp, mr, map50, map75, map = p.mean(), r.mean(), ap50.mean(), ap75.mean(), ap.mean()
-        nt = np.bincount(stats[3].astype(int64), minlength=nc)  # number of targets per class
+        nt = np.bincount(stats[3].astype(np.int64), minlength=nc)  # number of targets per class
     else:
         nt = torch.zeros(1)
 
